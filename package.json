@@ -2,6 +2,7 @@
   "name": "smarty-react-hooks",
   "version": "1.0.0",
   "description": "My custom react hooks used in programs.",
+  "github": "https://github.com/shallinta/smarty-react-hooks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
