@@ -25,7 +25,7 @@ let timer = null;
 let isFirst = true;
 let lastTime = 0;
 
-export default (fn, args, cb, cbArgs, wait, opts = {}) => {
+const useAsyncDebounce = (fn, args, cb, cbArgs, wait, opts = {}) => {
   const [synchingCount, setSynchingCount] = useState(0);
   const promise = useCallback(fn, args);
   const memoizedCb = useCallback(cb, cbArgs);
@@ -88,3 +88,5 @@ export default (fn, args, cb, cbArgs, wait, opts = {}) => {
 
   return [synchingCount > 0, run];
 };
+
+export default useAsyncDebounce;

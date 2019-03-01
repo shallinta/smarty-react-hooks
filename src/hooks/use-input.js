@@ -20,7 +20,7 @@
 
 import { useState, useCallback } from 'react';
 
-export default (initValue, rule) => {
+const useInput = (initValue, rule) => {
   const [value, setValue] = useState(initValue);
   const [error, setError] = useState(false);
 
@@ -34,3 +34,5 @@ export default (initValue, rule) => {
 
   return [value, setValue, error, test];
 };
+
+export default useInput;

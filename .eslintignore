@@ -1,0 +1,4 @@
+/.tmp/**
+/docs/**
+/dist/**
+/node_modules/**

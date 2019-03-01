@@ -14,7 +14,7 @@ import { useState, useCallback } from 'react';
 
 let waiting = false;
 
-export default (fn, args, cb, cbArgs) => {
+const useAsync = (fn, args, cb, cbArgs) => {
   const [synching, setSynching] = useState(false);
 
   const promise = useCallback(fn, args);
@@ -45,3 +45,5 @@ export default (fn, args, cb, cbArgs) => {
 
   return [synching, run];
 };
+
+export default useAsync;
