@@ -22,6 +22,7 @@ import { useState, useCallback } from 'react';
 
 const waitingObj = {};
 let timer = null;
+let trailingTimer = null;
 let isFirst = true;
 let lastTime = 0;
 
@@ -73,14 +74,24 @@ const useAsyncDebounce = (fn, args, cb, cbArgs, wait, opts = {}) => {
         }
         lastTime = curTime;
       }
+
       timer = setTimeout(() => {
         lastTime = 0;
+        start(...params);
         timer = null;
         isFirst = true;
-        if (trailing) {
-          start(...params);
-        }
       }, wait);
+
+      if (trailing) {
+        if (trailingTimer) {
+          clearTimeout(trailingTimer);
+          trailingTimer = null;
+        }
+        trailingTimer = setTimeout(() => {
+          start(...args);
+          trailingTimer = null;
+        }, wait);
+      }
     } else {
       start(...params);
     }
