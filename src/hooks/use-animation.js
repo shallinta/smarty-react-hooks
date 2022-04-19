@@ -20,12 +20,14 @@ const useAnimation = (ref) => {
   const [active, setActive] = useState(false); // 用于控制动画激活(css动画样式)状态
   const [animating, setAnimating] = useState(false); // 正在动画中的标识
 
-  const resetAnimating = useCallback(() => {
-    // 动画结束后
-    setAnimating(false);
-    if (!visible) {
-      // 离开动画结束后，更新display=false
-      setDisplay(false);
+  const resetAnimating = useCallback((e) => {
+    if (e.target === ref) {
+      // 动画结束后
+      setAnimating(false);
+      if (!visible) {
+        // 离开动画结束后，更新display=false
+        setDisplay(false);
+      }
     }
   }, [visible]);
 
