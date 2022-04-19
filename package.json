@@ -39,7 +39,7 @@
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-eslint": "^5.0.0",
     "rollup-plugin-terser": "^4.0.4",
-    "standard-version": "^5.0.1"
+    "standard-version": "^9.3.2"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
