@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/shallinta/smarty-react-hooks/compare/v0.2.2...v0.2.3) (2022-04-22)
+
+
+### Features
+
+* 增加usekeyDown ([e5cbc74](https://github.com/shallinta/smarty-react-hooks/commit/e5cbc745b35130ccc9a5636285d3c03edac0b838))
+
 ### [0.2.2](https://github.com/shallinta/smarty-react-hooks/compare/v0.2.1...v0.2.2) (2022-04-19)
 
 
