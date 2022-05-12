@@ -289,7 +289,7 @@ export default (eventType, {
         try {
           droppedData = JSON.parse(droppedData);
         } catch (ex) {
-          console.error(ex);
+          // console.error(ex);
           return;
         }
         if (!droppedData || droppedData.namespace !== namespace) {
