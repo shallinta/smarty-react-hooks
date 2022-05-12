@@ -95,7 +95,9 @@ export default (eventType, {
 
     const isRight = !isLeft;
     const isBottom = !isTop;
-    const { basic, left, right, top, bottom, leftTop, leftBottom, rightTop, rightBottom } = styleObj;
+    const {
+      basic, left, right, top, bottom, leftTop, leftBottom, rightTop, rightBottom
+    } = styleObj;
 
     if (basic) {
       el.classList.add(basic);
