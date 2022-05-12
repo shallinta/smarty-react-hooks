@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/shallinta/smarty-react-hooks/compare/v0.2.3...v0.2.4) (2022-05-12)
+
+
+### Features
+
+* 新增 useDragNDrop hook ([ae7de36](https://github.com/shallinta/smarty-react-hooks/commit/ae7de36639b995efe5fee5c7a95ee2674fa5ad7e))
+
 ### [0.2.3](https://github.com/shallinta/smarty-react-hooks/compare/v0.2.2...v0.2.3) (2022-04-22)
 
 
