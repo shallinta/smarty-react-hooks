@@ -24,3 +24,4 @@
 - useInput
 - useKeyDown
 - useDragNDrop
+- useUpdateEffect (useUpdateLayoutEffect, useFirstMountState)
