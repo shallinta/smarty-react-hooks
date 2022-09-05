@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/shallinta/smarty-react-hooks/compare/v0.2.8...v0.2.9) (2022-09-05)
+
+
+### Bug Fixes
+
+* useKeyDown 回调函数增加第二个参数,露出event对象 ([96a5d2b](https://github.com/shallinta/smarty-react-hooks/commit/96a5d2bdc7fb9c777c89fd6eae138f15092413c6))
+
 ### [0.2.8](https://github.com/shallinta/smarty-react-hooks/compare/v0.2.7...v0.2.8) (2022-07-07)
 
 
