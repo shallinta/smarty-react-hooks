@@ -28,15 +28,15 @@ export default (keyOrKeyCode, callback) => {
     const listener = (e) => {
       if (cb && typeof cb === 'function') {
         if (keyOrKeyCode === e.key) {
-          cb(e.key);
+          cb(e.key, e);
           return;
         }
         if (keyOrKeyCode === e.code) {
-          cb(e.code);
+          cb(e.code, e);
           return;
         }
         if (keyOrKeyCode === e.keyCode) {
-          cb(e.keyCode);
+          cb(e.keyCode, e);
         }
       }
     };
