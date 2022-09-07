@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/shallinta/smarty-react-hooks/compare/v0.2.9...v0.2.10) (2022-09-07)
+
+
+### Bug Fixes
+
+* 修复拖拽 dragData 为 0 时未被事件携带的 bug ([d840fb9](https://github.com/shallinta/smarty-react-hooks/commit/d840fb9a4ae51b63f99110e4e21203a8ec3dac9b))
+
 ### [0.2.9](https://github.com/shallinta/smarty-react-hooks/compare/v0.2.8...v0.2.9) (2022-09-05)
 
 
