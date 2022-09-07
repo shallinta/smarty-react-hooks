@@ -199,7 +199,7 @@ export default (eventType, {
             const draggingData = JSON.stringify({ namespace, data });
             e.dataTransfer.setData('text/plain', draggingData);
           }
-        } else if (innerDragData) {
+        } else {
           const draggingData = JSON.stringify({ namespace, data: innerDragData });
           e.dataTransfer.setData('text/plain', draggingData);
         }
