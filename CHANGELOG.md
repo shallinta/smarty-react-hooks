@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/shallinta/smarty-react-hooks/compare/v0.2.10...v0.2.11) (2022-11-23)
+
+
+### Bug Fixes
+
+* 修改 use-animation 部分变量的创建方式从 useState 改为 useRef 避免不必要的重新渲染 ([f8db1b7](https://github.com/shallinta/smarty-react-hooks/commit/f8db1b764e48cbdb3dd673524838bf943fbcbfa9))
+
 ### [0.2.10](https://github.com/shallinta/smarty-react-hooks/compare/v0.2.9...v0.2.10) (2022-09-07)
 
 
