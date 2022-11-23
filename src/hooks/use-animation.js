@@ -12,24 +12,29 @@
  *                      然后会在transtionend触发后再获得display=false
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import {
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+} from 'react';
 
 const useAnimation = (ref) => {
-  const [visible, setVisible] = useState(false); // 总体状态
+  const visible = useRef(false); // 总体状态
   const [display, setDisplay] = useState(false); // 用于控制显示隐藏(display样式)状态
   const [active, setActive] = useState(false); // 用于控制动画激活(css动画样式)状态
-  const [animating, setAnimating] = useState(false); // 正在动画中的标识
+  const isAnimating = useRef(false); // 正在动画中的标识
 
   const resetAnimating = useCallback((e) => {
     if (e.target === ref) {
       // 动画结束后
-      setAnimating(false);
-      if (!visible) {
+      isAnimating.current = false;
+      if (!visible.current) {
         // 离开动画结束后，更新display=false
         setDisplay(false);
       }
     }
-  }, [visible]);
+  }, [ref]);
 
   useEffect(() => {
     if (ref) {
@@ -40,7 +45,7 @@ const useAnimation = (ref) => {
         ref.removeEventListener('transitionend', resetAnimating);
       }
     };
-  }, [resetAnimating]);
+  }, [ref, resetAnimating]);
 
   useEffect(() => {
     if (display) {
@@ -52,19 +57,19 @@ const useAnimation = (ref) => {
   }, [display]);
 
   const set = useCallback((flag) => {
-    if (flag === visible) {
+    if (flag === visible.current) {
       return;
     }
-    if (animating) {
+    if (isAnimating.current) {
       // 终结未完成动画的状态(停止未完成动画而不会让动画直接执行完)
-      setDisplay(visible);
-      setActive(visible);
-      setAnimating(false);
+      setDisplay(visible.current);
+      setActive(visible.current);
+      isAnimating.current = false;
     }
     // 开始自动动画行为
     setTimeout(() => {
-      setVisible(flag);
-      setAnimating(true);
+      visible.current = flag;
+      isAnimating.current = true;
       if (flag) {
         // 进入时，先更新display，然后激活动画
         setDisplay(true);
@@ -73,7 +78,7 @@ const useAnimation = (ref) => {
         setActive(false);
       }
     }, 10);
-  }, [visible, animating]);
+  }, []);
 
   return [display, active, set];
 };
